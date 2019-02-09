@@ -1,0 +1,12 @@
+0 4 * * * sudo /sbin/reboot
+30 4 * * 0 sudo apt-get update && sudo apt-get upgrade -y
+38 11 * * * sudo /usr/bin/python3 /home/pi/bin/DailyLine_0700.py
+30 7 * * * sudo /usr/bin/python3 /home/pi/bin/DailyLine_0730.py
+31 7 * * * sudo /usr/bin/python3 /home/pi/bin/DailyLine_0731.py
+0 8 * * * sudo /usr/bin/python3 /home/pi/bin/DailyLine_0800.py
+1 8 * * * sudo /usr/bin/python3 /home/pi/bin/DailyLine_0801.py
+0 18 * * 1-5 sudo /usr/bin/python3 /home/pi/bin/DailyLine_1800.py
+0 19 * * 1-5 sudo /usr/bin/python3 /home/pi/bin/DailyLine_1900.py
+0 22 * * * sudo /usr/bin/python3 /home/pi/bin/DailyLine_2200.py
+0 23 * * * sudo /usr/bin/python3 /home/pi/bin/DailyLine_2300.py
+0 8 25 * * sudo /usr/bin/python3 /home/pi/bin/monthLine_25th.py
