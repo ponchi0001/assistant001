@@ -7,12 +7,11 @@ def main(msg):
     url = "https://notify-api.line.me/api/notify"
 #ファイルを読み込んでアシスタント決定
     path = '/home/pi/table/sTABLE'
-    f = open(path)
-    to = f.readlines()
+    with open(path) as f:
+        to = f.readlines()
 #宛先はアシスタント
     token = to[0].rstrip()
     headers = {"Authorization" : "Bearer "+ token}
-    f.close()
 #メッセージを作る
     message =  msg
     payload = {"message" :  message}
