@@ -26,7 +26,7 @@ def getapi():
         mo = f.readlines()
 #宛先はアシスタント
     msg = mo[0].rstrip()
-    print(msg)
+#print(msg)
     return msg
 
 if __name__ == '__main__':
