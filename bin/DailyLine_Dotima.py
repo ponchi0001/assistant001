@@ -7,7 +7,7 @@ import datetime
 def main(msg):
     url = "https://notify-api.line.me/api/notify"
     #ファイルを読み込んでアシスタント決定
-    path = '/home/pi/table/sTABLE'
+    path = '/home/pi/work/table/sTABLE'
     with open(path) as f:
         to = f.readlines()
     #宛先はアシスタント
@@ -21,7 +21,7 @@ def main(msg):
     
 def getapi():
 #print("15分以内にモバイルDotimaの開始ボタンを押してください。")
-    path = '/home/pi/table/mTABLE'
+    path = '/home/pi/work/table/mTABLE'
     with open(path) as f:
         mo = f.readlines()
 #宛先はアシスタント
