@@ -20,12 +20,13 @@ def main(msg):
     
 #メッセージの内容
 def getapi():
-    msg = '\n' + "おはようございます。"+'\n' \
-    + "何事も身体が資本です。以下を続けましょう。" + '\n' \
-    + "・腕立て10回" + '\n' \
-    + "・トランポリン100回" + '\n' \
-    + "・腰回し左右20回" + '\n' \
-    + "今日も頑張りましょう。"
+    #print("15分以内にモバイルDotimaの開始ボタンを押してください。")
+    path = '/home/pi/work/table/mTABLE0700'
+    with open(path) as f:
+        mo = f.readlines()
+    #宛先はアシスタント
+    msg = mo[0].rstrip()
+    #print(msg)
     return msg
 
 if __name__ == '__main__':
