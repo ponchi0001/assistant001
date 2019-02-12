@@ -26,7 +26,7 @@ def getapi():
         mo = f.readlines()
     #宛先はアシスタント
     msg = ""
-    for mm in mo()
+    for mm in mo[]
         msg = msg + mm
     #print(msg)
     return msg
