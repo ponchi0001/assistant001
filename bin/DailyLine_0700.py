@@ -6,7 +6,7 @@ import json
 def main(msg):
     url = "https://notify-api.line.me/api/notify"
 #ファイルを読み込んでアシスタント決定
-    path = '/home/pi/table/sTABLE'
+    path = '/home/pi/work/table/sTABLE'
     with open(path) as f:
         to = f.readlines()
 #宛先はアシスタント
