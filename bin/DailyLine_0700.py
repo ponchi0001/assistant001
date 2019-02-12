@@ -25,7 +25,9 @@ def getapi():
     with open(path) as f:
         mo = f.readlines()
     #宛先はアシスタント
-    msg = mo[0].rstrip()
+    msg = ""
+    for mm in mo
+        msg = msg + mm
     #print(msg)
     return msg
 
