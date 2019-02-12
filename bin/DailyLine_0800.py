@@ -5,8 +5,12 @@ import json
 #毎日朝8時の通知を行うスクリプト。
 def main(msg):
     url = "https://notify-api.line.me/api/notify"
-#宛先はアシスタント
-    token = "DE2O0rewCeKShOPQ4jZBPhZE1dW9naQvZw9ufsz5nYv"#ここにアクセストークンを入力します。
+    #ファイルを読み込んでアシスタント決定
+    path = '/home/pi/work/table/sTABLE'
+    with open(path) as f:
+        to = f.readlines()
+    #宛先はアシスタント
+    token = to[0].rstrip()
     headers = {"Authorization" : "Bearer "+ token}
 
     message =  msg
@@ -15,11 +19,14 @@ def main(msg):
     r = requests.post(url ,headers = headers ,params=payload)
     
 def getapi():
-    msg = '\n' + "毎日やることは以下です。"+'\n' \
-    + "・お風呂掃除" + '\n' \
-    + "・布団上げる" + '\n' \
-    + "・R-1を飲む" + '\n' \
-    + "できましたか？"
+    path = '/home/pi/work/table/mTABLE0800'
+    with open(path) as f:
+        mo = f.readlines()
+    #宛先はアシスタント
+    msg = ""
+    for mm in mo:
+        msg = msg + mm
+    #print(msg)
     return msg
 
 if __name__ == '__main__':

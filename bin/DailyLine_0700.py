@@ -20,7 +20,6 @@ def main(msg):
     
 #メッセージの内容
 def getapi():
-    #print("15分以内にモバイルDotimaの開始ボタンを押してください。")
     path = '/home/pi/work/table/mTABLE0700'
     with open(path) as f:
         mo = f.readlines()
