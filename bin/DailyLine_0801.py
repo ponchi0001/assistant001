@@ -26,6 +26,7 @@ def getapi():
 #各曜日毎のタスクを定義する。
 	task=["","","","","","",""]
     path = '/home/pi/work/table/mTABLEWeektasks'
+
     with open(path) as f:
         mo = f.readlines()
         #	task[0]=["本気の英単語1分チャレンジ各レベル×３回"]
@@ -35,8 +36,9 @@ def getapi():
         #	task[4]=["本気の英単語1分チャレンジ各レベル×３回"]
         #	task[5]=["パジャマ交換","爪切り"]
         #	task[6]=["スーツのアイロン掛け","眉毛の手入れ"]
-for i in range(7):
-    task[i]=mo(i)
+    for i in range(7):
+        task[i]=mo(i)
+
 #print("今日の定型タスクは以下です。")
 	msg = '\n' + \
 	"今日は"+Strweekday[aDate.weekday()]+"曜日です。" + '\n' \
