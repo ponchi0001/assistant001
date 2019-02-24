@@ -28,7 +28,7 @@ def getapi():
     msg = ""
     for mm in mo:
         msg = msg + mm
-    return msg
+return msg
 
 if __name__ == '__main__':
     msg = getapi()
