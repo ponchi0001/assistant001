@@ -20,15 +20,15 @@ with open(path) as f:
     r = requests.post(url ,headers = headers ,params=payload)
     
 def getapi():
-    path = '/home/pi/work/table/mTABL1800'
+    path = '/home/pi/work/table/mTABLE1800'
     with open(path) as f:
         mo = f.readlines()
-        print(mo)
     #宛先はアシスタント
     msg = ""
     for mm in mo:
         msg = msg + mm
-return msg
+    #print(msg)
+    return msg
 
 if __name__ == '__main__':
     msg = getapi()
