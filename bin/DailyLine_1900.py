@@ -19,7 +19,7 @@ def main(msg):
     r = requests.post(url ,headers = headers ,params=payload)
     
 def getapi():
-    path = '/home/pi/work/table/mTABL1800'
+    path = '/home/pi/work/table/mTABL1900'
     with open(path) as f:
         mo = f.readlines()
     #宛先はアシスタント
