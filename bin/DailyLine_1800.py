@@ -23,6 +23,7 @@ def getapi():
     path = '/home/pi/work/table/mTABL1800'
     with open(path) as f:
         mo = f.readlines()
+            print(mo)
     #宛先はアシスタント
     msg = ""
     for mm in mo:
