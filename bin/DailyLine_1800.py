@@ -7,8 +7,9 @@ def main(msg):
     url = "https://notify-api.line.me/api/notify"
 #ファイルを読み込んでアシスタント決定
 path = '/home/pi/work/table/sTABLE2'
-    with open(path) as f:
-        to = f.readlines()
+
+with open(path) as f:
+    to = f.readlines()
 #通知先は帰宅
     token = to[0].rstrip()
     headers = {"Authorization" : "Bearer "+ token}
