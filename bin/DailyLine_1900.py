@@ -5,7 +5,12 @@ import json
 #19時に今日のご飯を確認する
 def main(msg):
     url = "https://notify-api.line.me/api/notify"
-    token = "HmRFH319MLcN6WLTY1wpeCw4Q5kSQ1YOhER4dJNcbRb"#ここにアクセストークンを入力します。
+    #ファイルを読み込んでアシスタント決定
+    path = '/home/pi/work/table/sTABLE2'
+    with open(path) as f:
+        to = f.readlines()
+    #宛先はアシスタント
+    token = to[0].rstrip()
     headers = {"Authorization" : "Bearer "+ token}
 
     message =  msg
@@ -14,7 +19,13 @@ def main(msg):
     r = requests.post(url ,headers = headers ,params=payload)
     
 def getapi():
-    msg = "今日のご飯は？"
+    path = '/home/pi/work/table/mTABL1800'
+    with open(path) as f:
+        mo = f.readlines()
+    #宛先はアシスタント
+    msg = ""
+    for mm in mo:
+        msg = msg + mm
     return msg
 
 if __name__ == '__main__':
