@@ -15,8 +15,14 @@ def main(msg):
     r = requests.post(url ,headers = headers ,params=payload)
     
 def getapi():
-    msg = '\n' + "読書の時間です。"+'\n' \
-    + "少し集中して本に向き合いましょう。"
+    path = '/home/pi/work/table/mTABLE2200'
+    with open(path) as f:
+        mo = f.readlines()
+    #宛先はアシスタント
+    msg = ""
+    for mm in mo:
+        msg = msg + mm
+    #print(msg)
     return msg
 
 if __name__ == '__main__':
